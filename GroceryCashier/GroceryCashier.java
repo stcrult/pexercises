@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
  * The GroceryCashier program implements an application that
- * calculates the total price for 5 fruits purchased
+ * calculates the total price for 5 products purchased from a Grocery
  * and prints the output on the screen.
  *
  * @author S.Çapar
