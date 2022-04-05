@@ -1,0 +1,90 @@
+import java.util.Scanner;
+
+/**
+ * The FindHoroscope program implements an application that
+ * finds horoscope for a given month and day.
+ *
+ * @author S.Çapar
+ * @version 1.0, 05/04/2022
+ * @since 1.0
+ */
+public class FindingHoroscope {
+
+    /**
+     * This is the main method
+     * @param args unused
+     * @since 1.0
+     */
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println(("Please enter the following values:"));
+        System.out.print("Month =? "); int month=s.nextByte();
+        if (month>0 && month<13) {
+            boolean isError = false;
+            String horoscope = "";
+
+            System.out.print("Day   =? "); int day=s.nextByte();
+            if (day>0 && day<32) {
+                if (month == 1) {
+                    if (day < 22) horoscope = "♑ Capricorn";
+                    else          horoscope = "♒ Aquarius";
+                }else if (month == 2) {
+                    if (day>29) isError = true;
+                    else {
+                        if (day < 20)  horoscope = "♒ Aquarius";
+                        else           horoscope = "♓ Pisces";
+                    }
+                }else if (month == 3) {
+                    if (day < 21) horoscope = "♓ Pisces";
+                    else          horoscope = "♈ Aries";
+                }else if (month == 4) {
+                    if (day > 30) isError = true;
+                    else {
+                        if (day < 21) horoscope = "♈ Aries";
+                        else          horoscope = "♉ Taurus";
+                    }
+                }else if (month == 5) {
+                    if (day < 22) horoscope = "♉ Taurus";
+                    else          horoscope = "♊ Gemini";
+                }else if (month == 6) {
+                    if (day > 30) isError = true;
+                    else {
+                        if (day < 23) horoscope = "♊ Gemini";
+                        else          horoscope = "♋ Cancer";
+                    }
+                }else if (month == 7) {
+                    if (day < 23) horoscope = "♋ Cancer";
+                    else          horoscope = "♌ Leo";
+                }else if (month == 8) {
+                    if (day < 23) horoscope = "♌ Leo";
+                    else          horoscope = "♍ Virgo";
+                }else if (month == 9) {
+                    if (day > 30) isError = true;
+                    else {
+                        if (day < 23) horoscope = "♍ Virgo";
+                        else          horoscope = "♎ Libra";
+                    }
+                }else if (month == 10) {
+                    if (day < 23) horoscope = "♎ Libra";
+                    else          horoscope = "♏ Scorpio";
+                }else if (month == 11) {
+                    if (day > 30) isError = true;
+                    else {
+                        if (day < 22) horoscope = "♏ Scorpio";
+                        else          horoscope = "♐ Sagittarius";
+                    }
+                }else {
+                    if (day < 22) horoscope = "♐ Sagittarius";
+                    else          horoscope = "♑ Capricorn";
+                }
+            }else isError = true;
+
+            if (isError) System.out.println("Invalid day entered");
+            else         System.out.println("Your Horoscope = " + horoscope);
+
+        }else{
+            System.out.println("Invalid month entered");
+        }
+    }
+}
